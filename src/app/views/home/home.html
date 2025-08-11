@@ -1,0 +1,9 @@
+@for (pokemon of movingPokemon(); track pokemon.name) {
+<img class="absolute cursor-pointer" [src]="pokemon.sprite" width="100" [title]="pokemon.name" [style.transform]="'translate(' + pokemon.x + 'px, ' + pokemon.y + 'px)'" />
+}
+
+<style>
+	img {
+		transition: transform 2000ms ease-out;
+	}
+</style>

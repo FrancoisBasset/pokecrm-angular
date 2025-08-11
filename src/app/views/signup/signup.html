@@ -1,1 +1,13 @@
-<h1>Inscription</h1>
+<form [formGroup]="signupForm" class="flex flex-col mx-auto gap-4 w-fit p-5 bg-gray-200 rounded">
+	<input type="text" formControlName="username" placeholder="Nom d'utilisateur" />
+
+	<input type="password" formControlName="password" placeholder="Mot de passe" />
+
+	<input type="text" formControlName="firstname" placeholder="Prénom" />
+
+	<input type="text" formControlName="lastname" placeholder="Nom" />
+
+	<button (click)="signup()" class="!bg-emerald-500 disabled:!bg-gray-200 disabled:!text-black" [disabled]="!signupForm.valid">S'inscrire</button>
+
+	<h1 class="text-center">{{ message }}</h1>
+</form>

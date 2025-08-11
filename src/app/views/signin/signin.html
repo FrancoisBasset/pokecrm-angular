@@ -1,1 +1,11 @@
-<h1>Signin</h1>
+<form [formGroup]="signinForm" class="flex flex-col mx-auto gap-4 w-fit p-5 bg-gray-200 rounded">
+	<input type="text" formControlName="username" placeholder="Nom d'utilisateur" />
+
+	<input type="password" formControlName="password" placeholder="Mot de passe" />
+
+	<button (click)="signin()" class="!bg-emerald-500 disabled:!bg-gray-200 disabled:!text-black" [disabled]="!signinForm.valid">Se connecter</button>
+
+	@if (message()) {
+		<h1 class="text-center">{{ message() }}</h1>
+	}
+</form>

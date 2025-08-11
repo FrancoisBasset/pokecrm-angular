@@ -2,8 +2,13 @@ import { Routes } from '@angular/router';
 import SignUpView from './views/signup/signup';
 import SignInView from './views/signin/signin';
 import PokemonListView from './views/pokemonlist/pokemonlist';
+import HomeView from './views/home/home';
 
 export const routes: Routes = [
+	{
+		path: '',
+		component: HomeView
+	},
 	{
 		path: 'inscription',
 		component: SignUpView

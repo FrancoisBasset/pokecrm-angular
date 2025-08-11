@@ -8,13 +8,6 @@ import MenuBar from './components/menubar/menubar';
 	template: `
 		<MenuBar />
 		<router-outlet />
-	`,
-	styles: `
-		:host {
-			background-image: url('/pokeball.png');
-			background-repeat: repeat;
-			background-color: lightblue;
-		}
 	`
 })
 export class App {

@@ -6,4 +6,5 @@ export default interface Pokemon {
 	types: string[];
 	height: number;
 	weight: number;
+	catchrate: number;
 }

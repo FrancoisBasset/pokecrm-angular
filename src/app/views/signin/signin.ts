@@ -29,6 +29,7 @@ export default class SignInView {
 				res.json().then(json => {
 					if (res.status === 200) {
 						localStorage.setItem('token', json.token);
+						this.message.set('');
 					} else {
 						this.message.set(json.message);
 					}

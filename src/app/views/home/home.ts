@@ -10,21 +10,16 @@ export default class HomeView {
 	protected movingPokemon = signal<MovingPokemon[]>([]);
 
 	ngOnInit() {
-		fetch('https://127.0.0.1:8000/pokemon')
+		fetch('https://127.0.0.1:8000/randompokemon')
 			.then(res => res.json())
 			.then(json => {
 				const allPokemon: Pokemon[] = json;
 
-				for (let i = 0; i < 20; i++) {
-					const randomPokemon: Pokemon = allPokemon[Math.floor(Math.random() * allPokemon.length)];
-
-					const { x, y } = this.getRandomPosition();
-
+				for (const pokemon of allPokemon) {
 					const movingPokemon: MovingPokemon = {
-						sprite: randomPokemon.sprite,
-						name: randomPokemon.name,
-						x: x,
-						y: y
+						sprite: pokemon.sprite,
+						name: pokemon.name,
+						...this.getRandomPosition()
 					};
 					this.movingPokemon.update(values => [...values, movingPokemon]);
 				}

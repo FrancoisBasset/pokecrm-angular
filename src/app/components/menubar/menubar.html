@@ -1,8 +1,18 @@
 <div class="flex flex-row justify-between m-2">
-	<button routerLink="/touslespokemon">Tous les Pokémon</button>
 	<div>
-		<button routerLink="/inscription">Inscription</button>
+		<button routerLink="/touslespokemon">Tous les Pokémon</button>
+		@if (isConnected()) {
+			<button routerLink="/monprofil">Mon profil</button>
+		}
+	</div>
 
-		<button routerLink="/connexion">Connexion</button>
+	<div>
+		@if (isConnected()) {
+			<button (click)="logout()">Se déconnecter</button>
+		} @else {
+			<button routerLink="/inscription">Inscription</button>
+
+			<button routerLink="/connexion">Connexion</button>
+		}
 	</div>
 </div>

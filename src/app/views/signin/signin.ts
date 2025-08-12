@@ -30,6 +30,7 @@ export default class SignInView {
 					if (res.status === 200) {
 						localStorage.setItem('token', json.token);
 						this.message.set('');
+						window.location.href = '/monprofil';
 					} else {
 						this.message.set(json.message);
 					}

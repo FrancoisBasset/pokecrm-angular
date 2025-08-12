@@ -3,6 +3,7 @@ import SignUpView from './views/signup/signup';
 import SignInView from './views/signin/signin';
 import PokemonListView from './views/pokemonlist/pokemonlist';
 import HomeView from './views/home/home';
+import MyProfileView from './views/myprofile/myprofile';
 
 export const routes: Routes = [
 	{
@@ -20,5 +21,9 @@ export const routes: Routes = [
 	{
 		path: 'touslespokemon',
 		component: PokemonListView
+	},
+	{
+		path: 'monprofil',
+		component: MyProfileView
 	}
 ];

@@ -1,0 +1,8 @@
+<div class="flex flex-col mx-auto bg-gray-200 w-fit p-5 rounded-xl text-center gap-4">
+	<input type="text" [(ngModel)]="pokedex_id" placeholder="Numéro du Pokédex" />
+	<input type="text" [(ngModel)]="salt" placeholder="Code secret" />
+
+	<button (click)="checkSalt()" class="disabled:!bg-gray-200" [disabled]="buttonIsDisabled()">Trouver le Pokémon</button>
+	
+    <ng-content></ng-content>
+</div>

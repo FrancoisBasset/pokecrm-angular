@@ -24,17 +24,16 @@ export default class SignInView {
 				username: this.signinForm.value.username,
 				password: md5(this.signinForm.value.password as string)
 			})
-		})
-			.then(res => {
-				res.json().then(json => {
-					if (res.status === 200) {
-						localStorage.setItem('token', json.token);
-						this.message.set('');
-						window.location.href = '/monprofil';
-					} else {
-						this.message.set(json.message);
-					}
-				});
+		}).then(res => {
+			res.json().then(json => {
+				if (res.status === 200) {
+					localStorage.setItem('token', json.token);
+					this.message.set('');
+					window.location.href = '/monprofil';
+				} else {
+					this.message.set(json.message);
+				}
 			});
+		});
 	}
 }

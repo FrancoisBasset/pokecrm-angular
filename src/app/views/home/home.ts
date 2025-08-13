@@ -10,6 +10,14 @@ export default class HomeView {
 	protected movingPokemon = signal<MovingPokemon[]>([]);
 
 	ngOnInit() {
+		this.fetchPokemon();
+
+		setInterval(() => {
+			this.updatePositions();
+		}, 1200);
+	}
+
+	fetchPokemon() {
 		fetch('https://127.0.0.1:8000/randompokemon')
 			.then(res => res.json())
 			.then(json => {
@@ -23,10 +31,6 @@ export default class HomeView {
 					};
 					this.movingPokemon.update(values => [...values, movingPokemon]);
 				}
-
-				setInterval(() => {
-					this.updatePositions();
-				}, 1200);
 			});
 	}
 

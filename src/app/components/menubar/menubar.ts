@@ -13,14 +13,13 @@ export default class MenuBar {
 	logout() {
 		fetch('https://127.0.0.1:8000/logout', {
 			method: 'DELETE',
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
-            }
-        })
-            .then(() => {
-                localStorage.removeItem('token');
-				this.router.navigate(['/']);
-				this.isConnected.set(false);
-            })
+			headers: {
+				'Authorization': 'Bearer ' + localStorage.getItem('token')
+			}
+		}).then(() => {
+			localStorage.removeItem('token');
+			this.router.navigate(['/']);
+			this.isConnected.set(false);
+		});
 	}
 }

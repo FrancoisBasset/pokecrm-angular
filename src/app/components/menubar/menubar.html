@@ -2,17 +2,17 @@
 	<div>
 		<button routerLink="/touslespokemon">Tous les Pokémon</button>
 		@if (isConnected()) {
-			<button routerLink="/monprofil">Mon profil</button>
+		<button routerLink="/monprofil">Mon profil</button>
 		}
 	</div>
 
 	<div>
 		@if (isConnected()) {
-			<button (click)="logout()">Se déconnecter</button>
+		<button (click)="logout()">Se déconnecter</button>
 		} @else {
-			<button routerLink="/inscription">Inscription</button>
+		<button routerLink="/inscription">Inscription</button>
 
-			<button routerLink="/connexion">Connexion</button>
+		<button routerLink="/connexion">Connexion</button>
 		}
 	</div>
 </div>

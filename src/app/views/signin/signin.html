@@ -6,6 +6,6 @@
 	<button (click)="signin()" class="!bg-emerald-500 disabled:!bg-gray-200 disabled:!text-black" [disabled]="!signinForm.valid">Se connecter</button>
 
 	@if (message()) {
-		<h1 class="text-center">{{ message() }}</h1>
+	<h1 class="text-center">{{ message() }}</h1>
 	}
 </form>

@@ -1,20 +1,17 @@
 <div class="flex flex-col bg-white border-4 border-red-400 w-fit rounded-xl m-1">
-    <div class="bg-emerald-500 p-1 rounded w-fit m-1 mx-auto text-white font-bold">
-        {{pokemon()?.id}}
-    </div>
+	<div class="bg-emerald-500 p-1 rounded w-fit m-1 mx-auto text-white font-bold">{{pokemon()?.id}}</div>
 
-    <div class="mx-auto">
-        <img [src]="'https://play.pokemonshowdown.com/sprites/ani/' + pokemon()?.englishName?.toLowerCase() + '.gif'" style="max-height: 50px" />
-    </div>
+	<div class="mx-auto">
+		<img [src]="getFrontGif()" style="min-height: 50px; max-height: 50px" />
+		<img [src]="getBackGif()" style="min-height: 50px; max-height: 50px" />
+	</div>
 
-    <div class="font-bold">{{pokemon()?.name}}</div>
+	<div class="font-bold">{{pokemon()?.name}}</div>
 
-    <div>Gen {{pokemon()?.generation}}</div>
+	<div>Gen {{pokemon()?.generation}}</div>
 
-    <div class="flex flex-row gap-1 m-1">
-        <label class="bg-fuchsia-500 p-1 rounded w-fit m-1 mx-auto text-white font-bold">{{pokemon()?.height}} m</label>
-        <label class="bg-lime-500 p-1 rounded w-fit m-1 mx-auto text-white font-bold">{{pokemon()?.weight}} kg</label>
-    </div>
-    
-    
+	<div class="flex flex-row gap-1 m-1">
+		<label class="bg-fuchsia-500 p-1 rounded w-fit m-1 mx-auto text-white font-bold">{{pokemon()?.height}} m</label>
+		<label class="bg-lime-500 p-1 rounded w-fit m-1 mx-auto text-white font-bold">{{pokemon()?.weight}} kg</label>
+	</div>
 </div>

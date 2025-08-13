@@ -5,8 +5,8 @@
 	}
 </FindPokemonForm>
 
-<div class="flex flex-col mx-auto bg-gray-200 w-fit p-5 rounded-xl text-center gap-4 mt-2">
-	<div class="p-2 rounded-xl text-white bg-red-500 font-bold">Mes Pokémon</div>
+<div class="flex flex-col mx-10 bg-gray-200 w-fit p-5 rounded-xl text-center gap-4 mt-2">
+	<div class="p-2 rounded-xl text-white bg-red-500 font-bold">Mes Pokémon ({{mypokemon().length}})</div>
 	<div class="mx-auto flex flex-wrap">
 		@for (pokemon of mypokemon(); track pokemon.id) {
 		<PokemonBlock [pokemon]="pokemon" />
